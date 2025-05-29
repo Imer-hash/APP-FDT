@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fumigadora don tomas - Cartera de Clientes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+<header>
+    <h1>Fumigadora don tomas</h1>
+    <nav>
+        <button id="clientsBtn" class="active">Clientes</button>
+        <button id="appointmentsBtn">Agendar Citas</button>
+    </nav>
+</header>
+    <main>
+        <section id="clientsSection" class="active">
+            <h2>Lista de Clientes</h2>
+            <form id="clientForm">
+                <input type="text" id="clientName" placeholder="Nombre del cliente" required />
+                <input type="text" id="clientPhone" placeholder="Teléfono" required />
+                <input type="text" id="clientAddress" placeholder="Dirección" />
+                <input type="text" id="clientObservation" placeholder="Observación" />
+                <button type="submit">Agregar Cliente</button>
+            </form>
+            <ul id="clientList"></ul>
+        </section>
+        <section id="appointmentsSection">
+            <h2>Agendar Citas</h2>
+            <form id="appointmentForm">
+                <select id="clientSelect" required>
+                    <option value="">Seleccione un cliente</option>
+                </select>
+                <input type="datetime-local" id="appointmentDate" required />
+                <input type="text" id="appointmentObservation" placeholder="Observación" />
+                <input type="text" id="fumigationType" placeholder="Tipo de fumigación" />
+                <button type="submit">Agendar</button>
+            </form>
+            <ul id="appointmentList"></ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registrado con éxito:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar Service Worker:', error);
+        });
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(90deg, #ff6600, #cc5200);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav button.active,
+nav button:hover {
+    background-color: white;
+    color: #ff6600;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(204, 82, 0, 0.3);
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+h2 {
+    color: #cc5200;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+form input,
+form select,
+form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #ff6600;
+    box-shadow: 0 0 5px #ff6600;
+}
+
+form button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #cc5200;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+.appointment-time {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #cc5200;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #ff6600;
+}
+
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
